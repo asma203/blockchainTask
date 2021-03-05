@@ -21,21 +21,21 @@ public class ProductPage extends PageBase {
 	@FindBy(xpath = "//span[contains(text(),'Add to Cart')]")
 	public WebElement addtocartbtn;
 	
-	@FindBy(id = "widget-view-cart-button")
+	@FindBy(xpath = "//button[@class='buttonnext3360789231__root Focusable3113165847__root Button2014687331__root Button2014687331--fullWidth StatesButton155224375__root AddToCartButton3061789056__addToCartButton']")
 	WebElement viewcartbtn;
 	
-	public void addToCart(String amount) throws InterruptedException {
+	public void addToCartpage(String amount) throws InterruptedException {
 		
 		entervalue.clear();
 		setTextElementText(entervalue, amount);
 		clickButton(selectcolor);
 		clickButton(addtocartbtn);
-		Thread.sleep(5000);
 		
 	}
 	
 	public void viewCart() {
 		clickButton(viewcartbtn);
+		viewcartbtn.sendKeys();
 		
 	}
 
